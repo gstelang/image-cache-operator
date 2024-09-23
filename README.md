@@ -21,3 +21,6 @@ Note:
 Next: implement your new API and generate the manifests (e.g. CRDs,CRs) with:
 $ make manifests
 ```
+
+# Define custom resource
+* Edit API types in `api/v1/imagecache_types.go` and run make
