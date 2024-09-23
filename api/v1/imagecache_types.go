@@ -28,14 +28,20 @@ type ImageCacheSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 
-	// Foo is an example field of ImageCache. Edit imagecache_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+	// Images is a list of Docker images to cache
+	Images []string `json:"images"`
+	// CacheSize is the maximum size of the cache in GB
+	CacheSize int `json:"cacheSize"`
 }
 
 // ImageCacheStatus defines the observed state of ImageCache
 type ImageCacheStatus struct {
 	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
+	// CachedImages is a list of successfully cached images
+	CachedImages []string `json:"cachedImages"`
+	// CurrentSize is the current size of the cache in GB
+	CurrentSize int `json:"currentSize"`
 }
 
 // +kubebuilder:object:root=true
