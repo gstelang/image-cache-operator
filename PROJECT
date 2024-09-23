@@ -7,4 +7,14 @@ layout:
 - go.kubebuilder.io/v4
 projectName: image-cache-operator
 repo: my.domain/image-cache-operator
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: my.domain
+  group: cache
+  kind: ImageCache
+  path: my.domain/image-cache-operator/api/v1
+  version: v1
 version: "3"
